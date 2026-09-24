@@ -1,0 +1,26 @@
+'use strict'
+
+const array = [
+    1, false, 'pen', null, undefined, -76, 12345, 9876, true, 246n, 'pencil', 908, 137, 9, null, 19.4, 0, 'usestrict', 975.324, undefined, false, '1234', 
+];
+const counts = { number: 0, string: 0, boolean: 0, undefined: 0, object: 0 };
+
+for (const item of array) {
+    const type1 = typeof item;
+    if (counts.hasOwnProperty(type1)) {
+        counts[type1]++;
+    }
+}
+
+console.dir(counts);
+
+const dynamic = {};
+
+for (const item of array) {
+    const type2 = typeof item;
+    if (!dynamic.hasOwnProperty(type2)) {
+        dynamic[type2] = 0;
+    }
+    dynamic[type2]++;
+}
+console.dir(dynamic);
