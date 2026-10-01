@@ -1,0 +1,21 @@
+'use strict'
+
+const database = [
+    { name: 'John', phone: '+380991234567' },
+    { name: 'Jane', phone: '+380998765432' },
+    { name: 'Bob', phone: '+380995555555' },
+    { name: 'Alice', phone: '+380991111111' },
+    { name: 'Charlie', phone: '+380994444444' }
+]
+
+const findPhoneByName = (name) => {
+    for (let i = 0; i < database.length; i++) {
+        if (database[i].name === name) {
+            return database[i].phone;
+        }
+    } 
+    return 'Not found';
+}
+
+console.log(findPhoneByName('Alice'));
+
